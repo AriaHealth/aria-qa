@@ -2,6 +2,10 @@ FROM node:14-alpine AS build
 
 WORKDIR /usr/src/app
 
+RUN apk update
+
+RUN apk add cmake make gcc g++ python3
+
 COPY --chown=node:node package*.json ./
 
 RUN npm ci

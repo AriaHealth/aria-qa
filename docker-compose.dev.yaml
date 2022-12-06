@@ -22,7 +22,7 @@ services:
     build:
       context: ./api
       dockerfile: Dockerfile
-    image: dashboard-api
+    image: linerocks/aria-qa-dashboard-api
     depends_on:
       db:
         condition: service_healthy
@@ -45,7 +45,7 @@ services:
     build:
       context: ./app
       dockerfile: Dockerfile
-    image: dashboard-app
+    image: linerocks/aria-qa-dashboard-app
     ports:
       - 3000:80
     environment:
